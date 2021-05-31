@@ -1,0 +1,303 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1f4037), to(#99f2c8));
+  background-image: linear-gradient(to right, #1f4037, #99f2c8);
+  position: relative;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.open {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.fa-check {
+  font-weight: bolder;
+  color: #025202;
+}
+
+.fa-times {
+  color: #750000;
+  font-weight: bolder;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container .wrapper {
+  height: 100%;
+}
+
+.container .wrapper .quote-wrapper {
+  min-height: 90%;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .wrapper .quote-wrapper .quote-centered {
+  width: 70%;
+  min-height: 50vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 650px) {
+  .container .wrapper .quote-wrapper .quote-centered {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container .wrapper .quote-wrapper .quote-centered .answer-content {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .answer-content .score {
+  font-weight: bolder;
+  margin-bottom: 0.4rem;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .answer-content button {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .quote-content {
+  width: 60%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+
+@media screen and (max-width: 650px) {
+  .container .wrapper .quote-wrapper .quote-centered .quote-content {
+    width: 100%;
+  }
+}
+
+.container .wrapper .quote-wrapper .quote-centered .quote-content .quote > p {
+  display: none;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .quote-content .quote-icon {
+  font-size: 2rem;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .quote-content .quote-text {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.container .wrapper .quote-wrapper .quote-centered .quote-footer p {
+  display: none;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.container .wrapper .quote-controls {
+  height: 10%;
+}
+
+.container .wrapper .quote-controls .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.container .wrapper .quote-controls .controls .left {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.container .wrapper .quote-controls .controls .left i {
+  margin-left: 0.9rem;
+  font-weight: bolder;
+  background: white;
+  color: black;
+  border-radius: 30px;
+  padding: 1.2rem;
+}
+
+.container .wrapper .quote-controls .controls .middle {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.container .wrapper .quote-controls .controls .middle .message {
+  font-weight: bolder;
+  text-align: center;
+  color: #740303;
+}
+
+.container .wrapper .quote-controls .controls .right {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: end;
+}
+
+.container .wrapper .quote-controls .controls .right i {
+  margin-right: 0.9rem;
+  font-weight: bolder;
+  background: white;
+  color: black;
+  border-radius: 30px;
+  padding: 1.2rem;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-container .modal {
+  background-color: white;
+  width: 30%;
+  min-height: 40%;
+  max-height: 100%;
+  color: black;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-container .modal .modal-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.modal-container .modal .modal-head .close-modal {
+  font-weight: bolder;
+  margin-right: 6px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  border-radius: 30px;
+  padding: 0 0.2rem;
+  cursor: pointer;
+}
+
+.modal-container .modal .modal-content {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-container .modal .modal-content ul {
+  list-style-type: decimal;
+}
+
+.modal-container .modal .modal-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.modal-container .modal .modal-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.modal-container .modal .modal-action button {
+  margin-right: 0.4rem;
+  margin: 0.2rem 0.4rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
+  background-image: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */
