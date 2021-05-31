@@ -167,7 +167,9 @@ const incrementQuoteIndex = function () {
       showQuote();
       storeAnswer();
     } else {
+      console.log(index);
       index--;
+      console.log(index);
       //* show error notification to the user
       notificationBar.textContent = 'Answers cannot be empty';
     }
@@ -187,7 +189,7 @@ const incrementQuoteIndex = function () {
 const decrementQuoteIndex = function () {
   //* decrement the index of the quotes
   index--;
-  if (index >= 0) {
+  if (index > 0) {
     //* add previous quote
     showQuote();
   } else {
