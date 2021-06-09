@@ -6,10 +6,10 @@ let quotes = [
     id: 1,
     quotes: ` <p class="quote-text">
                 You can
-                <input class="answerA" placeholder="[A](market), [B](product)"
+                <input class="answerA input-control" placeholder="[A](market), [B](product)"
                   />
                 your ass off, but if your
-                <input class="answerB" placeholder="[A](product), [B](market)"
+                <input class="answerB input-control" placeholder="[A](product), [B](market)"
                   />
                 sucks, you're dead.
               </p>`,
@@ -21,7 +21,7 @@ let quotes = [
   },
   {
     id: 2,
-    quotes: `<p class="quote-text">If life were <input class="answerA" placeholder="[A](predictable), [B](life)"/> it would cease to be <input placeholder="[A](predictable), [B](life)"  class="answerB">, and be without flavor.</p>`,
+    quotes: `<p class="quote-text">If life were <input class="answerA input-control" placeholder="[A](predictable), [B](life)"/> it would cease to be <input placeholder="[A](predictable), [B](life)"  class="answerB input-control">, and be without flavor.</p>`,
     author: 'Eleanor Roosevelt',
     answers: {
       a: 'predictable',
@@ -30,7 +30,7 @@ let quotes = [
   },
   {
     id: 3,
-    quotes: `<p class="quote-text"><input class="answerA" placeholder="[A](plans), [B](life)"/> is what happens when you're busy making other <input class="answerB" placeholder="[A](plans), [B](life)"/>.</p>`,
+    quotes: `<p class="quote-text"><input class="answerA input-control" placeholder="[A](plans), [B](life)"/> is what happens when you're busy making other <input class="answerB input-control" placeholder="[A](plans), [B](life)"/>.</p>`,
     author: 'John Lennon',
     answers: {
       a: 'life',
@@ -39,7 +39,7 @@ let quotes = [
   },
   {
     id: 4,
-    quotes: `<p class="quote-text">If you look at what you have in <input class="answerA" placeholder="[A](enough), [B](life)">, you'll always have more. If you look at what you don't have in life, you'll never have <input class="answerB" placeholder="[A](enough), [B](life)"/>.</p>`,
+    quotes: `<p class="quote-text">If you look at what you have in <input class="answerA input-control" placeholder="[A](enough), [B](life)">, you'll always have more. If you look at what you don't have in life, you'll never have <input class="answerB input-control" placeholder="[A](enough), [B](life)"/>.</p>`,
     author: 'Oprah Winfrey',
     answers: {
       a: 'life',
@@ -48,7 +48,7 @@ let quotes = [
   },
   {
     id: 5,
-    quotes: `<p class="quote-text"><input class="answerA" placeholder="[A](spread), [B](happier)"/> love everywhere you go. Let no one ever come to you without leaving <input  class="answerB" placeholder="[A](spread), [B](happier)"/>.</p>`,
+    quotes: `<p class="quote-text"><input class="answerA input-control" placeholder="[A](spread), [B](happier)"/> love everywhere you go. Let no one ever come to you without leaving <input  class="answerB input-control" placeholder="[A](spread), [B](happier)"/>.</p>`,
     author: 'Mother Teresa',
     answers: {
       a: 'spread',
@@ -133,8 +133,8 @@ const guessQuotes = function () {
 //* check answers state validity
 const checkAnswersState = function () {
   //* select answers from the DOM
-  const answerA = document.querySelector('.answerA').value.trim();
-  const answerB = document.querySelector('.answerB').value.trim();
+  const answerA = document.querySelectorAll('.answerA')[index - 1].value.trim();
+  const answerB = document.querySelectorAll('.answerB')[index - 1].value.trim();
 
   //* check if the user answer field is empty
   if (!answerA || !answerB) {
@@ -185,6 +185,9 @@ const incrementQuoteIndex = function () {
 };
 
 const decrementQuoteIndex = function () {
+  //* reset notification message
+  notificationBar.textContent = '';
+
   //* decrement the index of the quotes
   index--;
   if (index > 0) {
@@ -193,6 +196,9 @@ const decrementQuoteIndex = function () {
   } else {
     //* reset the counter
     index = 0;
+
+    //* render quote
+    showQuote();
   }
 };
 
